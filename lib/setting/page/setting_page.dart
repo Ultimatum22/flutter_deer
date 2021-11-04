@@ -28,40 +28,40 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        centerTitle: '设置',
+        centerTitle: 'set up',
       ),
       body: Column(
         children: <Widget>[
           Gaps.vGap5,
           ClickItem(
-            title: '账号管理',
+            title: 'Account management',
             onTap: () => NavigatorUtils.push(context, SettingRouter.accountManagerPage),
           ),
           if (Device.isMobile) ClickItem(
-            title: '清除缓存',
+            title: 'clear cache',
             content: '23.5MB',
             onTap: () {},
           ),
           ClickItem(
-            title: '夜间模式',
+            title: 'Night mode',
             content: _getCurrentTheme(),
             onTap: () => NavigatorUtils.push(context, SettingRouter.themePage),
           ),
           ClickItem(
-            title: '多语言',
+            title: 'multi-language',
             content: _getCurrentLocale(),
             onTap: () => NavigatorUtils.push(context, SettingRouter.localePage),
           ),
           if (Device.isMobile) ClickItem(
-            title: '检查更新',
+            title: 'Check for updates',
             onTap: _showUpdateDialog,
           ),
           ClickItem(
-            title: '关于我们',
+            title: 'about us',
             onTap: () => NavigatorUtils.push(context, SettingRouter.aboutPage),
           ),
           ClickItem(
-            title: '退出当前账号',
+            title: 'Log out of current account',
             onTap: _showExitDialog,
           ),
           if (Device.isMobile) ClickItem(
@@ -82,13 +82,13 @@ class _SettingPageState extends State<SettingPage> {
     String themeMode;
     switch(theme) {
       case 'Dark':
-        themeMode = '开启';
+        themeMode = 'Turn on';
         break;
       case 'Light':
-        themeMode = '关闭';
+        themeMode = 'closure';
         break;
       default:
-        themeMode = '跟随系统';
+        themeMode = 'Follow system';
         break;
     }
     return themeMode;
@@ -99,13 +99,13 @@ class _SettingPageState extends State<SettingPage> {
     String localeMode;
     switch(locale) {
       case 'zh':
-        localeMode = '中文';
+        localeMode = 'Chinese';
         break;
       case 'en':
         localeMode = 'English';
         break;
       default:
-        localeMode = '跟随系统';
+        localeMode = 'Follow system';
         break;
     }
     return localeMode;

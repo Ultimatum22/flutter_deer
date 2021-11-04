@@ -69,7 +69,7 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: '关于我们',
+        title: 'about us',
       ),
       body: Column(
         children: <Widget>[
@@ -87,8 +87,8 @@ class _AboutPageState extends State<AboutPage> {
             onTap: () => _launchWebURL('Flutter Deer', 'https://github.com/simplezhli/flutter_deer')
           ),
           ClickItem(
-            title: '作者博客',
-            onTap: () => _launchWebURL('作者博客', 'https://weilu.blog.csdn.net')
+            title: 'Author\'s Blog',
+            onTap: () => _launchWebURL('Author\'s Blog', 'https://weilu.blog.csdn.net')
           ),
         ],
       ),

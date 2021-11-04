@@ -72,7 +72,7 @@ class _SMSVerifyDialogState extends State<SMSVerifyDialog> {
               alignment: Alignment.center,
               padding: const EdgeInsets.only(top: 22.0),
               child: const Text(
-                '短信验证',
+                'SMS verification',
                 style: TextStyles.textBold18,
               ),
             ),
@@ -80,7 +80,7 @@ class _SMSVerifyDialogState extends State<SMSVerifyDialog> {
               top: 0.0,
               right: 0.0,
               child: Semantics(
-                label: '关闭',
+                label: 'closure',
                 child: GestureDetector(
                   onTap: () => NavigatorUtils.goBack(context),
                   child: const Padding(
@@ -94,7 +94,7 @@ class _SMSVerifyDialogState extends State<SMSVerifyDialog> {
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.0),
-          child: Text('本次操作需短信验证，验证码会发送至您的注册手机 15000000000', textAlign: TextAlign.center),
+          child: Text('This operation requires SMS verification, and the verification code will be sent to your registered mobile phone 15000000000', textAlign: TextAlign.center),
         ),
         Gaps.vGap16,
         Expanded(

@@ -73,9 +73,9 @@ class _UpdateDialogState extends State<UpdateDialog> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    const Text('新版本更新', style: TextStyles.textSize16),
+                    const Text('New version update', style: TextStyles.textSize16),
                     Gaps.vGap10,
-                    const Text('1.又双叒修复了一大堆bug。\n\n2.祭天了多名程序猿。'),
+                    const Text('1. A lot of bugs were fixed again. \n\n2. Many programmers have been sacrificed to the sky. '),
                     Gaps.vGap15,
                     if (_isDownload)
                       LinearProgressIndicator(
@@ -104,7 +104,7 @@ class _UpdateDialogState extends State<UpdateDialog> {
           width: 110.0,
           height: 36.0,
           child: MyButton(
-            text: '残忍拒绝',
+            text: 'Cruel rejection',
             fontSize: Dimens.font_sp16,
             textColor: primaryColor,
             disabledTextColor: Colors.white,
@@ -124,7 +124,7 @@ class _UpdateDialogState extends State<UpdateDialog> {
           width: 110.0,
           height: 36.0,
           child: MyButton(
-            text: '立即更新',
+            text: 'update immediately',
             fontSize: Dimens.font_sp16,
             onPressed: () {
               if (defaultTargetPlatform == TargetPlatform.iOS) {

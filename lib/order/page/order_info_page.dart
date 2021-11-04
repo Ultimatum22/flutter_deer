@@ -55,7 +55,7 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
             Expanded(
               flex: 1,
               child: MyButton(
-                text: '接单',
+                text: 'Orders',
                 minHeight: 45,
                 onPressed: () {},
               ),

@@ -16,7 +16,7 @@ class LocalePage extends StatefulWidget {
 
 class _LocalePageState extends State<LocalePage> {
 
-  final List<String> _list = <String>['跟随系统', '中文', 'English'];
+  final List<String> _list = <String>['Follow the system','Chinese','English'];
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _LocalePageState extends State<LocalePage> {
     }
     return Scaffold(
       appBar: const MyAppBar(
-        title: '多语言',
+        title: 'multi-language',
       ),
       body: ListView.separated(
         itemCount: _list.length,
@@ -45,7 +45,7 @@ class _LocalePageState extends State<LocalePage> {
             onTap: () {
               final String locale = index == 0 ? '' : (index == 1 ? 'zh' : 'en');
               context.read<LocaleProvider>().setLocale(locale);
-              Toast.show('当前功能仅登录模块有效');
+              Toast.show('The current function is only valid for the login module');
               setState(() {});
             },
             child: Container(

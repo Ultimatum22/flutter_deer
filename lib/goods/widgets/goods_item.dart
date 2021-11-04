@@ -56,7 +56,7 @@ class GoodsItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                item.type % 3 != 0 ? '八月十五中秋月饼礼盒' : '八月十五中秋月饼礼盒八月十五中秋月饼礼盒',
+                item.type % 3 != 0 ? 'August 15 Mid-Autumn Mooncake Gift Box' : 'August 15 Mid-Autumn Moon Cake Gift Box\nAugust 15 Mid-Autumn Moon Cake Gift Box',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -67,7 +67,7 @@ class GoodsItem extends StatelessWidget {
                     // 默认为占位替换，类似于gone
                     visible: item.type % 3 == 0,
                     child: _GoodsItemTag(
-                      text: '立减',
+                      text: 'Instant reduction',
                       color: Theme.of(context).errorColor,
                     ),
                   ),
@@ -75,7 +75,7 @@ class GoodsItem extends StatelessWidget {
                     // 修改透明度实现隐藏，类似于invisible
                     opacity: item.type % 2 != 0 ? 0.0 : 1.0,
                     child: _GoodsItemTag(
-                      text: '金币抵扣',
+                      text: 'Gold coin deduction',
                       color: Theme.of(context).primaryColor,
                     ),
                   )
@@ -92,7 +92,7 @@ class GoodsItem extends StatelessWidget {
             Semantics(
               /// container属性为true，防止上方ExcludeSemantics去除此处语义
               container: true,
-              label: '商品操作菜单',
+              label: 'Commodity operation menu',
               child: GestureDetector(
                 child: Container(
                   key: Key('goods_menu_item_$index'),
@@ -108,7 +108,7 @@ class GoodsItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: Text(
-                '特产美味',
+                'Specialty',
                 style: Theme.of(context).textTheme.subtitle2,
               ),
             )
@@ -168,7 +168,7 @@ class GoodsItem extends StatelessWidget {
             Gaps.hGap15,
             MyButton(
               key: Key('goods_edit_item_$index'),
-              text: '编辑',
+              text: 'edit',
               fontSize: Dimens.font_sp16,
               radius: 24.0,
               minWidth: 56.0,
@@ -180,7 +180,7 @@ class GoodsItem extends StatelessWidget {
             ),
             MyButton(
               key: Key('goods_operation_item_$index'),
-              text: '下架',
+              text: 'Off shelf',
               fontSize: Dimens.font_sp16,
               radius: 24.0,
               minWidth: 56.0,
@@ -192,7 +192,7 @@ class GoodsItem extends StatelessWidget {
             ),
             MyButton(
               key: Key('goods_delete_item_$index'),
-              text: '删除',
+              text: 'delete',
               fontSize: Dimens.font_sp16,
               radius: 24.0,
               minWidth: 56.0,

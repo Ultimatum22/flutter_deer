@@ -60,7 +60,7 @@ class _GoodsAddMenuState extends State<GoodsAddMenu> with SingleTickerProviderSt
               NavigatorUtils.push(context, '${GoodsRouter.goodsEditPage}?isAdd=true&isScan=true', replace: true);
             },
             icon: LoadAssetImage('goods/scanning', width: 16.0, height: 16.0, color: iconColor,),
-            label: const Text('扫码添加'),
+            label: const Text('Scan code to add'),
             style: TextButton.styleFrom(
               primary: Theme.of(context).textTheme.bodyText2?.color,
               onSurface: Theme.of(context).textTheme.bodyText2?.color?.withOpacity(0.12),
@@ -80,7 +80,7 @@ class _GoodsAddMenuState extends State<GoodsAddMenu> with SingleTickerProviderSt
               NavigatorUtils.push(context, '${GoodsRouter.goodsEditPage}?isAdd=true', replace: true);
             },
             icon: LoadAssetImage('goods/add2', width: 16.0, height: 16.0, color: iconColor,),
-            label: const Text('添加商品'),
+            label: const Text('Adding goods'),
             style: TextButton.styleFrom(
               primary: Theme.of(context).textTheme.bodyText2?.color,
               onSurface: Theme.of(context).textTheme.bodyText2?.color?.withOpacity(0.12),

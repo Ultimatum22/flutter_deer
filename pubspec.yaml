@@ -92,6 +92,7 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   # 黄金测试
+
 #  flutter_goldens:
 #    sdk: flutter
   # 单元测试

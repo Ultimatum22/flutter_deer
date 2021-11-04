@@ -20,14 +20,14 @@ class _AccountManagerPageState extends State<AccountManagerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        centerTitle: '账号管理',
+        centerTitle: 'Account management',
       ),
       body: Column(
         children: <Widget>[
           Stack(
             children: <Widget>[
               ClickItem(
-                title: '店铺logo',
+                title: 'Shop logo',
                 onTap: () {}
               ),
               const Positioned(
@@ -39,12 +39,12 @@ class _AccountManagerPageState extends State<AccountManagerPage> {
             ],
           ),
           ClickItem(
-            title: '修改密码',
-            content: '用于密码登录',
+            title: 'change Password',
+            content: 'Used for password login',
             onTap: () => NavigatorUtils.push(context, LoginRouter.updatePasswordPage)
           ),
           const ClickItem(
-            title: '绑定账号',
+            title: 'Bind account',
             content: '15000000000',
           ),
         ],

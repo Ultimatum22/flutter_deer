@@ -25,11 +25,11 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
 
   bool _check = false;
   List<int> _selectValue = [0];
-  int _sendType = 0;
+  int _sendType = 1;
   String _sendPrice = '0.00';
   String _freePrice = '0.00';
   String _phone = '';
-  String _shopIntroduction = '零食铺子坚果饮料美酒佳肴…';
+  String _shopIntroduction = 'Snack Shop, Nuts, Beverages, Wine and Food…';
   String _securityService = '假一赔十';
   String _address = '陕西省 西安市 长安区 郭杜镇郭北村韩林路圣方医院斜对面';
   
@@ -47,7 +47,7 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
             children: <Widget>[
               Gaps.hGap16,
               Text(
-                _check ? '正在营业' : '暂停营业',
+                _check ? 'Open now' : 'Open now',
                 style: TextStyles.textBold24,
               ),
               const Spacer(),
@@ -68,11 +68,11 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
           Gaps.vGap32,
           const Padding(
             padding: EdgeInsets.only(left: 16.0),
-            child: Text('基础设置', style: TextStyles.textBold18),
+            child: Text('Basic Settings', style: TextStyles.textBold18),
           ),
           Gaps.vGap16,
           ClickItem(
-            title: '店铺简介',
+            title: 'Shop profile',
             content: _shopIntroduction,
             onTap: () {
               _goInputTextPage(context, '店铺简介', '这里有一段完美的简介…', _shopIntroduction, (result) {
@@ -105,8 +105,8 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
           ),
           Gaps.vGap16,
           ClickItem(
-            title: '运费配置',
-            content: _sendType == 0 ? '运费满免配置' : '运费比例配置',
+            title: 'Freight configuration',
+            content: _sendType == 0 ? 'Free configuration for full shipping' : 'Free configuration for full shipping',
             onTap: _showSendTypeDialog,
           ),
           Visibility(
@@ -141,8 +141,8 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
             visible: _sendType != 0,
             child: ClickItem(
               maxLines: 10,
-              title: '运费比例',
-              content: '1、订单金额<20元，配送费为订单金额的1%\n2、订单金额≥20元，配送费为订单金额的1%',
+              title: 'Freight rate',
+              content: '1. Order amount <20 yuan, delivery fee is 1% of order amount\n2, order amount ≥ 20 yuan, delivery fee is 1% of order amount',
               onTap: () => NavigatorUtils.push(context, ShopRouter.freightConfigPage),
             ),
           ),

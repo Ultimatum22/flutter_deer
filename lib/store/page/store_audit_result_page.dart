@@ -20,7 +20,7 @@ class _StoreAuditResultPageState extends State<StoreAuditResultPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: '审核结果',
+        title: 'Audit results',
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -34,7 +34,7 @@ class _StoreAuditResultPageState extends State<StoreAuditResultPage> {
             ),
             Gaps.vGap12,
             const Text(
-              '恭喜，店铺资料审核成功',
+              'Congratulations, the store information was successfully reviewed',
               style: TextStyles.textSize16,
             ),
             Gaps.vGap8,
@@ -44,7 +44,7 @@ class _StoreAuditResultPageState extends State<StoreAuditResultPage> {
             ),
             Gaps.vGap8,
             Text(
-              '预计完成时间：02月28日',
+              'Estimated completion time: February 28',
               style: Theme.of(context).textTheme.subtitle2,
             ),
             Gaps.vGap24,
@@ -52,7 +52,7 @@ class _StoreAuditResultPageState extends State<StoreAuditResultPage> {
               onPressed: () {
                 NavigatorUtils.push(context, Routes.home, clearStack: true);
               },
-              text: '进入',
+              text: 'Enter',
             )
           ],
         ),

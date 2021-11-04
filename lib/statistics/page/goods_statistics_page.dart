@@ -52,7 +52,7 @@ class _GoodsStatisticsPageState extends State<GoodsStatisticsPage> {
     
     return Scaffold(
       appBar: MyAppBar(
-        actionName: _type ? '待配货' : '已配货',
+        actionName: _type ? 'Pending Goods':'Pending Goods',
         onPressed: () {
           setState(() {
             _type = !_type;
@@ -68,12 +68,12 @@ class _GoodsStatisticsPageState extends State<GoodsStatisticsPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Gaps.vGap4,
-              Text(_type ? '已配货' : '待配货', style: TextStyles.textBold24),
+              Text(_type ? 'Already distributed' : 'To be distributed', style: TextStyles.textBold24),
               Gaps.vGap32,
               if (_type) time else MergeSemantics(child: time,),
               Gaps.vGap8,
               _buildChart(),
-              const Text('热销商品排行', style: TextStyles.textBold18),
+              const Text('Top-selling products ranking', style: TextStyles.textBold18),
               ListView.builder(
                 physics: const ClampingScrollPhysics(),
                 padding: const EdgeInsets.only(top: 16.0),
@@ -96,7 +96,7 @@ class _GoodsStatisticsPageState extends State<GoodsStatisticsPage> {
       child: FractionallySizedBox(
         heightFactor: 0.8,
         child: PieChart(
-          name: _type ? '已配货' : '待配货',
+          name: _type ? 'Already distributed' : 'To be distributed',
           data: _getRandomData(),
         ),
       ),
@@ -174,7 +174,7 @@ class _GoodsStatisticsPageState extends State<GoodsStatisticsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Text('那鲁火多饮料', maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontWeight: FontWeight.bold, fontSize: Dimens.font_sp12)),
+                    const Text('Naruhot drink', maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontWeight: FontWeight.bold, fontSize: Dimens.font_sp12)),
                     Text('250ml', style: Theme.of(context).textTheme.subtitle2),
                   ],
                 ),

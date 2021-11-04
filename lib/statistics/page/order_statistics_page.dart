@@ -40,7 +40,7 @@ class _OrderStatisticsPageState extends State<OrderStatisticsPage> with TickerPr
   bool _isExpanded = true;
   late Color _unSelectedTextColor;
   
-  static const List<String> _weeks = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+  static const List<String> _weeks = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
   @override
   void initState() {
@@ -133,13 +133,13 @@ class _OrderStatisticsPageState extends State<OrderStatisticsPage> with TickerPr
                   children: <Widget>[
                     Text(widget.index == 1 ? '订单走势' : '交易额走势', style: TextStyles.textBold18),
                     Gaps.vGap16,
-                    _buildChart(Colours.app_main, Colours.shadow_blue, widget.index == 1 ? '全部订单' : '交易额(元)', '3000'),
+                    _buildChart(Colours.app_main, Colours.shadow_blue, widget.index == 1 ? 'All orders' : 'Transaction amount (yuan)', '3000'),
                     if (widget.index == 1) Column(
                       children: <Widget>[
                         Gaps.vGap16,
-                        _buildChart(const Color(0xFFFFAA33), const Color(0x80FFAA33), '完成订单', '2000'),
+                        _buildChart(const Color(0xFFFFAA33), const Color(0x80FFAA33), 'Complete order', '2000'),
                         Gaps.vGap16,
-                        _buildChart(Theme.of(context).errorColor, const Color(0x80FF4759), '取消订单', '1000'),
+                        _buildChart(Theme.of(context).errorColor, const Color(0x80FF4759), 'cancel order', '1000'),
                         Gaps.vGap16,
                       ],
                     )

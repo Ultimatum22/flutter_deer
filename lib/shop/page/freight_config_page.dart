@@ -43,8 +43,8 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: MyAppBar(
-        title: '运费比例配置',
-        actionName: '重置',
+        title: 'Freight ratio configuration',
+        actionName: 'Reset',
         onPressed: () {
           setState(() {
             _reset();
@@ -62,7 +62,7 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
                 onPressed: () {
                   NavigatorUtils.goBack(context);
                 },
-                text: '完成',
+                text: 'Finish',
               ),
             ),
             Positioned(
@@ -87,7 +87,7 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
   Widget _buildItem(int index) {
     return _list[index].isAdd ?
     Semantics(
-      label: '添加区间',
+      label: 'Add interval',
       child: GestureDetector(
         onTap: () {
           final FreightConfigModel config = _list[index - 1];
@@ -96,7 +96,7 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
               _list.insert(_list.length - 2, FreightConfigModel('', '', 1, false, ''));
             });
           } else {
-            Toast.show('请先完善上一个区间金额！');
+            Toast.show('Please complete the previous interval amount first!');
             return;
           }
         },
@@ -121,10 +121,10 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(index == 0 ? '订单金额小于' : (index == _list.length - 1 ? '订单金额不小于' : '订单金额区间')),
+                  Text(index == 0 ? 'Order amount is less than' : (index == _list.length - 1 ? 'The order amount is not less than' : 'Order amount range')),
                   Expanded(
                     child: Semantics(
-                      label: '填写订单金额',
+                      label: 'Fill in the order amount',
                       child: InkWell(
                         onTap: () {
                           if (index == 0 || index == _list.length - 1) {
@@ -134,8 +134,8 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
                           }
                         },
                         child: Text(
-                          _getPriceText(index).isEmpty ? '订单金额' : _getPriceText(index),
-                          key: Key('订单金额$index'),
+                          _getPriceText(index).isEmpty ? 'order amount' : _getPriceText(index),
+                          key: Key('order amount$index'),
                           textAlign: TextAlign.end,
                           style: _getPriceText(index).isEmpty ? Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: Dimens.font_sp14) : null,
                         ),
@@ -151,7 +151,7 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
               Row(
                 children: <Widget>[
                   Semantics(
-                    label: '选择比率',
+                    label: 'Selection ratio',
                     child: InkWell(
                       onTap: () {
                         setState(() {
@@ -170,7 +170,7 @@ class _FreightConfigPageState extends State<FreightConfigPage> {
                   ),
                   Gaps.hGap16,
                   Semantics(
-                    label: '选择金额',
+                    label: 'Choose amount',
                     child: InkWell(
                       onTap: () {
                         setState(() {

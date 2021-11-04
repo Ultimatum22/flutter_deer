@@ -30,7 +30,7 @@ class ShopPage extends StatefulWidget {
 
 class _ShopPageState extends State<ShopPage> with BasePageMixin<ShopPage, ShopPagePresenter>, AutomaticKeepAliveClientMixin<ShopPage> implements ShopIMvpView {
   
-  final List<String> _menuTitle = ['账户流水', '资金管理', '提现账号'];
+  final List<String> _menuTitle = ['Account Flow','Fund Management','Withdrawal Account'];
   final List<String> _menuImage = ['zhls', 'zjgl', 'txzh'];
   final List<String> _menuDarkImage = ['dark_zhls', 'dark_zjgl', 'dark_txzh'];
 
@@ -73,7 +73,7 @@ class _ShopPageState extends State<ShopPage> with BasePageMixin<ShopPage, ShopPa
               ),
             ),
             IconButton(
-              tooltip: '设置',
+              tooltip: 'set up',
               onPressed: () {
                 NavigatorUtils.push(context, SettingRouter.settingPage);
               },
@@ -97,7 +97,7 @@ class _ShopPageState extends State<ShopPage> with BasePageMixin<ShopPage, ShopPa
                   children: <Widget>[
                     const SizedBox(width: double.infinity, height: 56.0),
                     const Text(
-                      '官方直营店',
+                      'Official Direct Store',
                       style: TextStyles.textBold24,
                     ),
                     Positioned(
@@ -125,7 +125,7 @@ class _ShopPageState extends State<ShopPage> with BasePageMixin<ShopPage, ShopPa
                   children: const <Widget>[
                     LoadAssetImage('shop/zybq', width: 40.0, height: 16.0,),
                     Gaps.hGap8,
-                    Text('店铺账号:15000000000', style: TextStyles.textSize12)
+                    Text('Store account:15000000000', style: TextStyles.textSize12)
                   ],
                 ),
               ),
@@ -137,7 +137,7 @@ class _ShopPageState extends State<ShopPage> with BasePageMixin<ShopPage, ShopPa
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
-                  '账户',
+                  'Account',
                   style: TextStyles.textBold18,
                 ),
               ),
@@ -162,7 +162,7 @@ class _ShopPageState extends State<ShopPage> with BasePageMixin<ShopPage, ShopPa
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
-                  '店铺',
+                  'Shop',
                   style: TextStyles.textBold18,
                 ),
               ),
@@ -170,7 +170,7 @@ class _ShopPageState extends State<ShopPage> with BasePageMixin<ShopPage, ShopPa
             /// 使用Flexible防止溢出
             Flexible(
               child: _ShopFunctionModule(
-                data: const ['店铺设置'],
+                data: const ['Shop setting'],
                 image: const ['dpsz'],
                 darkImage: const ['dark_dpsz'],
                 onItemClick: (index) {

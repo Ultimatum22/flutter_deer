@@ -24,7 +24,7 @@ class GoodsPage extends StatefulWidget {
 
 class _GoodsPageState extends State<GoodsPage> with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
 
-  final List<String> _sortList = ['全部商品', '个人护理', '饮料', '沐浴洗护', '厨房用具', '休闲食品', '生鲜水果', '酒水', '家庭清洁'];
+  final List<String> _sortList = ['All Products','Personal Care','Beverages','Bath Care','Kitchen Utensils','Snack Foods','Fresh Fruits','Beverages','Household Cleaning'];
   TabController? _tabController;
   final PageController _pageController = PageController(initialPage: 0);
 
@@ -56,7 +56,7 @@ class _GoodsPageState extends State<GoodsPage> with SingleTickerProviderStateMix
         appBar: AppBar(
           actions: <Widget>[
             IconButton(
-              tooltip: '搜索商品',
+              tooltip: 'Search products',
               onPressed: () => NavigatorUtils.push(context, GoodsRouter.goodsSearchPage),
               icon: LoadAssetImage(
                 'goods/search',
@@ -67,7 +67,7 @@ class _GoodsPageState extends State<GoodsPage> with SingleTickerProviderStateMix
               ),
             ),
             IconButton(
-              tooltip: '添加商品',
+              tooltip: 'Adding goods',
               key: _addKey,
               onPressed: _showAddMenu,
               icon: LoadAssetImage(
@@ -86,7 +86,7 @@ class _GoodsPageState extends State<GoodsPage> with SingleTickerProviderStateMix
           children: <Widget>[
             Semantics(
               container: true,
-              label: '选择商品类型',
+              label: 'Choose product type',
               child: GestureDetector(
                 key: _buttonKey,
                 /// 使用Selector避免同provider数据变化导致此处不必要的刷新
@@ -134,9 +134,9 @@ class _GoodsPageState extends State<GoodsPage> with SingleTickerProviderStateMix
                 labelColor: Theme.of(context).primaryColor,
                 indicatorPadding: const EdgeInsets.only(right: 98.0 - 36.0),
                 tabs: const <Widget>[
-                  _TabView('在售', 0),
-                  _TabView('待售', 1),
-                  _TabView('下架', 2),
+                  _TabView('in stock', 0),
+                  _TabView('For sale', 1),
+                  _TabView('Off shelf', 2),
                 ],
               ),
             ),
@@ -177,7 +177,7 @@ class _GoodsPageState extends State<GoodsPage> with SingleTickerProviderStateMix
         sortIndex: provider.sortIndex,
         onSelected: (index, name) {
           provider.setSortIndex(index);
-          Toast.show('选择分类: $name');
+          Toast.show('Choose category: $name');
         },
       ),
     );
@@ -222,7 +222,7 @@ class _TabView extends StatelessWidget {
                   visible: !(provider.goodsCountList[index] == 0 || provider.index != index),
                   child: Padding(
                     padding: const EdgeInsets.only(top: 1.0),
-                    child: Text(' (${provider.goodsCountList[index]}件)',
+                    child: Text(' (${provider.goodsCountList[index]})',
                       style: const TextStyle(fontSize: Dimens.font_sp12),
                     ),
                   ),

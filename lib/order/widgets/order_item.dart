@@ -10,8 +10,8 @@ import 'package:flutter_deer/widgets/my_card.dart';
 
 import '../order_router.dart';
 
-const List<String> orderLeftButtonText = ['拒单', '拒单', '订单跟踪', '订单跟踪', '订单跟踪'];
-const List<String> orderRightButtonText = ['接单', '开始配送', '完成', '', ''];
+const List<String> orderLeftButtonText =['Rejection','Rejection','Order Tracking','Order Tracking','Order Tracking'];
+const List<String> orderRightButtonText = ['Accept order','Start delivery','Finish','',''];
 
 class OrderItem extends StatelessWidget {
 
@@ -50,10 +50,10 @@ class OrderItem extends StatelessWidget {
         Row(
           children: <Widget>[
             const Expanded(
-              child: Text('15000000000（郭李）'),
+              child: Text('15000000000（Guo Li）'),
             ),
             Text(
-              '货到付款',
+              'Cash on delivery',
               style: TextStyle(
                 fontSize: Dimens.font_sp12,
                 color: Theme.of(context).errorColor,
@@ -63,7 +63,7 @@ class OrderItem extends StatelessWidget {
         ),
         Gaps.vGap8,
         Text(
-          '西安市雁塔区 鱼化寨街道唐兴路唐兴数码3楼318',
+          '318, 3rd Floor, Tangxing Digital, Tangxing Road, Yuhuazhai Street, Yanta District, Xi\'an',
           style: Theme.of(context).textTheme.subtitle2,
         ),
         Gaps.vGap8,
@@ -73,7 +73,7 @@ class OrderItem extends StatelessWidget {
           text: TextSpan(
             style: textTextStyle,
             children: <TextSpan>[
-              const TextSpan(text: '清凉一度抽纸'),
+              const TextSpan(text: 'Cool and pumped paper for a while'),
               TextSpan(text: '  x1', style: Theme.of(context).textTheme.subtitle2),
             ],
           ),
@@ -83,7 +83,7 @@ class OrderItem extends StatelessWidget {
           text: TextSpan(
             style: textTextStyle,
             children: <TextSpan>[
-              const TextSpan(text: '清凉一度抽纸'),
+              const TextSpan(text: 'Cool and pumped paper for a while'),
               TextSpan(text: '  x2', style: Theme.of(context).textTheme.subtitle2),
             ],
           ),
@@ -97,7 +97,7 @@ class OrderItem extends StatelessWidget {
                   style: textTextStyle,
                   children: <TextSpan>[
                     TextSpan(text: Utils.formatPrice('20.00', format: MoneyFormat.NORMAL)),
-                    TextSpan(text: '  共3件商品', style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: Dimens.font_sp10)),
+                    TextSpan(text: 'A total of 3 products', style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: Dimens.font_sp10)),
                   ],
                 ),
               ),
@@ -115,7 +115,7 @@ class OrderItem extends StatelessWidget {
           children: <Widget>[
             OrderItemButton(
               key: Key('order_button_1_$index'),
-              text: '联系客户',
+              text: 'Clients',
               textColor: isDark ? Colours.dark_text : Colours.text,
               bgColor: isDark ? Colours.dark_material_bg : Colours.bg_gray,
               onTap: () => _showCallPhoneDialog(context, '15000000000'),

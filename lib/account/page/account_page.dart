@@ -23,7 +23,7 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        centerTitle: '资金管理',
+        centerTitle: 'Money management',
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -32,15 +32,15 @@ class _AccountPageState extends State<AccountPage> {
             _buildCard(),
             Gaps.vGap5,
             ClickItem(
-              title: '提现',
+              title: 'withdraw',
               onTap: () => NavigatorUtils.push(context, AccountRouter.withdrawalPage),
             ),
             ClickItem(
-              title: '提现记录',
+              title: 'Withdrawals record',
               onTap: () => NavigatorUtils.push(context, AccountRouter.withdrawalRecordListPage),
             ),
             ClickItem(
-              title: '提现密码',
+              title: 'Withdraw password',
               onTap: () => NavigatorUtils.push(context, AccountRouter.withdrawalPasswordPage),
             ),
           ],

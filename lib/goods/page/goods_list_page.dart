@@ -61,8 +61,6 @@ class _GoodsListPageState extends State<GoodsListPage> with AutomaticKeepAliveCl
     'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3130502839,1206722360&fm=26&gp=0.jpg',
     if (Constant.isDriverTest)
       'https://img2.baidu.com/it/u=3994371075,170872697&fm=26&fmt=auto&gp=0.jpg'
-    else
-      'https://xxx', // 可以使用一张无效链接，触发缺省、异常显示图片
     'https://img0.baidu.com/it/u=4049693009,2577412121&fm=224&fmt=auto&gp=0.jpg',
     'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3659255919,3211745976&fm=26&gp=0.jpg',
     'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2085939314,235211629&fm=26&gp=0.jpg',
@@ -74,7 +72,7 @@ class _GoodsListPageState extends State<GoodsListPage> with AutomaticKeepAliveCl
       setState(() {
         _page = 1;
         _list = List.generate(widget.index == 0 ? 3 : 10, (i) =>
-            GoodsItemEntity(icon: _imgList[i % 6], title: '八月十五中秋月饼礼盒', type: i % 3));
+            GoodsItemEntity(icon: _imgList[i % 6], title: 'August 15 Mid-Autumn Mooncake Gift Box', type: i % 3));
       });
       _setGoodsCount(_list.length);
     });
@@ -84,7 +82,7 @@ class _GoodsListPageState extends State<GoodsListPage> with AutomaticKeepAliveCl
     await Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         _list.addAll(List.generate(10, (i) =>
-            GoodsItemEntity(icon: _imgList[i % 6], title: '八月十五中秋月饼礼盒', type: i % 3)));
+            GoodsItemEntity(icon: _imgList[i % 6], title: 'August 15 Mid-Autumn Mooncake Gift Box', type: i % 3)));
         _page ++;
       });
       _setGoodsCount(_list.length);

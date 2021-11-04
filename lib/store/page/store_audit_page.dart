@@ -16,10 +16,8 @@ import 'package:flutter_deer/widgets/text_field_item.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 
-
 /// design/2店铺审核/index.html
 class StoreAuditPage extends StatefulWidget {
-
   const StoreAuditPage({Key? key}) : super(key: key);
 
   @override
@@ -27,14 +25,14 @@ class StoreAuditPage extends StatefulWidget {
 }
 
 class _StoreAuditPageState extends State<StoreAuditPage> {
-
-  final GlobalKey<SelectedImageState> _imageGlobalKey = GlobalKey<SelectedImageState>();
+  final GlobalKey<SelectedImageState> _imageGlobalKey =
+      GlobalKey<SelectedImageState>();
   final FocusNode _nodeText1 = FocusNode();
   final FocusNode _nodeText2 = FocusNode();
   final FocusNode _nodeText3 = FocusNode();
   final ImagePicker picker = ImagePicker();
-  String _address = '陕西省 西安市 雁塔区 高新六路201号';
-
+  String _address =
+      'No. 201, Gaoxin 6th Road, Yanta District, Xi\'an, Shaanxi Province';
 
   KeyboardActionsConfig _buildConfig(BuildContext context) {
     return KeyboardActionsConfig(
@@ -72,7 +70,7 @@ class _StoreAuditPageState extends State<StoreAuditPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        centerTitle: '店铺审核资料',
+        centerTitle: 'Store audit information',
       ),
       body: MyScrollView(
         padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -83,13 +81,15 @@ class _StoreAuditPageState extends State<StoreAuditPage> {
           padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 8.0),
           child: MyButton(
             onPressed: () {
-              debugPrint('文件路径：${_imageGlobalKey.currentState?.pickedFile?.path}');
+              debugPrint(
+                  '文件路径：${_imageGlobalKey.currentState?.pickedFile?.path}');
               NavigatorUtils.push(context, StoreRouter.auditResultPage);
             },
-            text: '提交',
+            text: 'submit',
           ),
         ),
       ),
+
       /// 同时存在底部按钮与keyboardConfig配置时，为保证Android与iOS平台软键盘弹出高度正常，添加下面的代码。
       resizeToAvoidBottomInset: defaultTargetPlatform != TargetPlatform.iOS,
     );
@@ -100,7 +100,7 @@ class _StoreAuditPageState extends State<StoreAuditPage> {
       Gaps.vGap5,
       const Padding(
         padding: EdgeInsets.only(left: 16.0),
-        child: Text('店铺资料', style: TextStyles.textBold18),
+        child: Text('Store Information', style: TextStyles.textBold18),
       ),
       Gaps.vGap16,
       Center(
@@ -111,55 +111,66 @@ class _StoreAuditPageState extends State<StoreAuditPage> {
       Gaps.vGap10,
       Center(
         child: Text(
-          '店主手持身份证或营业执照',
-          style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: Dimens.font_sp14),
+          'Store owner holding ID card or business license',
+          style: Theme.of(context)
+              .textTheme
+              .subtitle2
+              ?.copyWith(fontSize: Dimens.font_sp14),
         ),
       ),
       Gaps.vGap16,
       TextFieldItem(
-        focusNode: _nodeText1,
-        title: '店铺名称',
-        hintText: '填写店铺名称'
-      ),
+          focusNode: _nodeText1,
+          title: 'Store Name',
+          hintText: 'Fill in the store name'),
       SelectedItem(
-        title: '主营范围',
-        content: _sortName,
-        onTap: () => _showBottomSheet()
-      ),
+          title: 'Main business scope',
+          content: _sortName,
+          onTap: () => _showBottomSheet()),
       SelectedItem(
-        title: '店铺地址',
-        content: _address,
-        onTap: () {
-          NavigatorUtils.pushResult(context, ShopRouter.addressSelectPage, (result) {
-            setState(() {
-              final PoiSearch model = result as PoiSearch;
-              _address = '${model.provinceName.nullSafe} ${model.cityName.nullSafe} ${model.adName.nullSafe} ${model.title.nullSafe}';
+          title: 'shop adress',
+          content: _address,
+          onTap: () {
+            NavigatorUtils.pushResult(context, ShopRouter.addressSelectPage,
+                (result) {
+              setState(() {
+                final PoiSearch model = result as PoiSearch;
+                _address =
+                    '${model.provinceName.nullSafe} ${model.cityName.nullSafe} ${model.adName.nullSafe} ${model.title.nullSafe}';
+              });
             });
-          });
-        }
-      ),
+          }),
       Gaps.vGap32,
       const Padding(
-        padding:EdgeInsets.only(left: 16.0),
-        child: Text('店主信息', style: TextStyles.textBold18),
+        padding: EdgeInsets.only(left: 16.0),
+        child: Text('Owner information', style: TextStyles.textBold18),
       ),
       Gaps.vGap16,
       TextFieldItem(
-        focusNode: _nodeText2,
-        title: '店主姓名',
-        hintText: '填写店主姓名'
-      ),
+          focusNode: _nodeText2,
+          title: 'Shop owner\'s name',
+          hintText: 'Fill in the name of the owner'),
       TextFieldItem(
-        focusNode: _nodeText3,
-        keyboardType: TextInputType.phone,
-        title: '联系电话',
-        hintText: '填写店主联系电话'
-      )
+          focusNode: _nodeText3,
+          keyboardType: TextInputType.phone,
+          title: 'contact number',
+          hintText: 'Fill in the owner\'s contact number')
     ];
   }
 
   String _sortName = '';
-  final List<String> _list = ['水果生鲜', '家用电器', '休闲食品', '茶酒饮料', '美妆个护', '粮油调味', '家庭清洁', '厨具用品', '儿童玩具', '床上用品'];
+  final List<String> _list = [
+    'Fruit Fresh',
+    'Household Appliances',
+    'Snacks Food',
+    'Tea Wine Beverages',
+    'Beauty & Personal Care',
+    'Grain and Oil Seasoning',
+    'Household Cleaning',
+    'Kitchen Supplies',
+    'Children\'s Toys',
+    'bed linings'
+  ];
 
   void _showBottomSheet() {
     showModalBottomSheet<void>(

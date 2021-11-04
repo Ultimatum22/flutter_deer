@@ -37,7 +37,7 @@ class _WithdrawalPasswordSettingState extends State<WithdrawalPasswordSetting> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: const Text(
-                  '设置提现密码',
+                  'Set withdrawal password',
                   style: TextStyles.textBold18,
                 ),
               ),
@@ -46,7 +46,7 @@ class _WithdrawalPasswordSettingState extends State<WithdrawalPasswordSetting> {
                 top: 16.0,
                 bottom: 16.0,
                 child: Semantics(
-                  label: '关闭',
+                  label: 'closure',
                   child: GestureDetector(
                     onTap: () => NavigatorUtils.goBack(context),
                     child: const LoadAssetImage(
@@ -76,7 +76,7 @@ class _WithdrawalPasswordSettingState extends State<WithdrawalPasswordSetting> {
                   ),
                 ),
                 Gaps.vGap10,
-                Text('提现密码不可为连续、重复的数字。', style: Theme.of(context).textTheme.subtitle2),
+                Text('The withdrawal password cannot be a continuous or repeated number.', style: Theme.of(context).textTheme.subtitle2),
               ],
             ),
           ),

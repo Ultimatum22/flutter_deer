@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deer/demo/demo_page.dart';
+import 'package:flutter_deer/home/home_page.dart';
 import 'package:flutter_deer/home/splash_page.dart';
 import 'package:flutter_deer/net/dio_utils.dart';
 import 'package:flutter_deer/net/intercept.dart';
@@ -23,10 +24,10 @@ import 'package:sp_util/sp_util.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
-//  debugProfileBuildsEnabled = true;
-//  debugPaintLayerBordersEnabled = true;
-//  debugProfilePaintsEnabled = true;
-//  debugRepaintRainbowEnabled = true;
+ // debugProfileBuildsEnabled = true;
+ // debugPaintLayerBordersEnabled = true;
+ // debugProfilePaintsEnabled = true;
+ // debugRepaintRainbowEnabled = true;
 
   /// 确保初始化完成
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +42,8 @@ Future<void> main() async {
   /// 1.22 预览功能: 在输入频率与显示刷新率不匹配情况下提供平滑的滚动效果
   // GestureBinding.instance?.resamplingEnabled = true;
   /// 异常处理
-  handleError(() => runApp(MyApp()));
+
+  handleError(runApp(MyApp()));
 
   /// 隐藏状态栏。为启动页、引导页设置。完成后修改回显示状态栏。
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
@@ -140,7 +142,6 @@ class MyApp extends StatelessWidget {
       // checkerboardRasterCacheImages: true,
       // showSemanticsDebugger: true, // 显示语义视图
       // checkerboardOffscreenLayers: true, // 检查离屏渲染
-
       theme: theme ?? provider.getTheme(),
       darkTheme: provider.getTheme(isDarkMode: true),
       themeMode: provider.getThemeMode(),

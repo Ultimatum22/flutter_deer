@@ -58,10 +58,12 @@ class Utils {
 
   static String? getCurrLocale() {
     final String locale = SpUtil.getString(Constant.locale)!;
-    if (locale == '') {
-      return window.locale.languageCode;
-    }
-    return locale;
+
+    return 'en';
+    // if (locale == '') {
+    //   return window.locale.languageCode;
+    // }
+    // return locale;
   }
 
 }

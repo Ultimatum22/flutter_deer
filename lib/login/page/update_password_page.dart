@@ -56,7 +56,7 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage> with ChangeNoti
   }
   
   void _confirm() {
-    Toast.show('修改成功！');
+    Toast.show('Successfully modified！');
     NavigatorUtils.goBack(context);
   }
   
@@ -64,7 +64,7 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage> with ChangeNoti
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: '修改密码',
+        title: 'change Password',
       ),
       body: MyScrollView(
         keyboardConfig: Utils.getKeyboardActionsConfig(context, <FocusNode>[_nodeText1, _nodeText2]),
@@ -72,12 +72,12 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage> with ChangeNoti
         padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 20.0),
         children: <Widget>[
           const Text(
-            '重置登录密码',
+            'Reset login password',
             style: TextStyles.textBold26,
           ),
           Gaps.vGap8,
           Text(
-            '设置账号 15000000000',
+            'Set up an account 15000000000',
             style: Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: Dimens.font_sp12),
           ),
           Gaps.vGap32,
@@ -87,7 +87,7 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage> with ChangeNoti
             controller: _oldPwdController,
             maxLength: 16,
             keyboardType: TextInputType.visiblePassword,
-            hintText: '请确认旧密码',
+            hintText: 'Please confirm the old password',
           ),
           Gaps.vGap8,
           MyTextField(
@@ -96,12 +96,12 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage> with ChangeNoti
             controller: _newPwdController,
             maxLength: 16,
             keyboardType: TextInputType.visiblePassword,
-            hintText: '请输入新密码',
+            hintText: 'Please enter a new password',
           ),
           Gaps.vGap24,
           MyButton(
             onPressed: _clickable ? _confirm : null,
-            text: '确认',
+            text: 'confirm',
           )
         ],
       ),

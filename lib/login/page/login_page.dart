@@ -5,6 +5,7 @@ import 'package:flutter_deer/login/widgets/my_text_field.dart';
 import 'package:flutter_deer/res/constant.dart';
 import 'package:flutter_deer/res/resources.dart';
 import 'package:flutter_deer/routers/fluro_navigator.dart';
+import 'package:flutter_deer/routers/routers.dart';
 import 'package:flutter_deer/store/store_router.dart';
 import 'package:flutter_deer/util/change_notifier_manage.dart';
 import 'package:flutter_deer/util/other_utils.dart';
@@ -75,7 +76,8 @@ class _LoginPageState extends State<LoginPage> with ChangeNotifierMixin<LoginPag
   
   void _login() {
     SpUtil.putString(Constant.phone, _nameController.text);
-    NavigatorUtils.push(context, StoreRouter.auditPage);
+    // NavigatorUtils.push(context, StoreRouter.auditPage);
+    NavigatorUtils.push(context, Routes.home);
   }
   
   @override
